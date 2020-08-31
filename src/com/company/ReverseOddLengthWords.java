@@ -2,12 +2,12 @@ package com.company;
 
 import java.util.Arrays;
 
-class ReverseOddLengthWords {
+class ReverseOddLengthWords extends Challenge {
 
-    /*System.out.println(ReverseOddLengthWords.ReverseTheOddOnes("Make sure you only reverse words of odd length"));
-     * reverse all the words which have odd length. The even length words are not changed
+    /* reverse all the words which have odd length. The even length words are not changed
+     * O(n)
      * */
-    static String ReverseTheOddOnes(String str) {
+    private String ReverseTheOddOnes(String str) {
         var strArray = str.split(" ");
         var correctString = new StringBuilder();
         StringBuilder stringBuilder;
@@ -22,5 +22,10 @@ class ReverseOddLengthWords {
         }
 
         return correctString.toString();
+    }
+
+    @Override
+    public void show() {
+        System.out.println(ReverseTheOddOnes("Make sure you only reverse words of odd length"));
     }
 }

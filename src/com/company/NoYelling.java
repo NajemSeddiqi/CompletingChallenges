@@ -2,13 +2,12 @@ package com.company;
 
 import java.util.Arrays;
 
-class NoYelling {
+class NoYelling extends Challenge {
 
-    /* System.out.println(NoYelling.stopYelling("That's a ton!! of cheese!!!!"));
-    function that transforms sentences ending with multiple question marks ? or exclamation marks !
+    /*   function that transforms sentences ending with multiple question marks ? or exclamation marks !
     into a sentence only ending with one without changing punctuation in the middle of the sentences.
     * */
-    static String stopYelling(String str) {
+    private static String stopYelling(String str) {
         if (!str.contains("!") && !str.contains("?")) return str;
 
         var split = str.split(" ");
@@ -27,4 +26,8 @@ class NoYelling {
                 .trim();
     }
 
+    @Override
+    public void show() {
+        System.out.println(NoYelling.stopYelling("That's a ton!! of cheese!!!!"));
+    }
 }

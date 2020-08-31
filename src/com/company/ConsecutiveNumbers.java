@@ -3,14 +3,13 @@ package com.company;
 import java.util.Arrays;
 
 
-class ConsecutiveNumbers {
+class ConsecutiveNumbers extends Challenge {
 
-    /*System.out.println(ConsecutiveNumbers.consecutiveNumbers(new int[]{5, 1, 4, 3, 2, 6}));
-     * function that determines whether elements in an array can be re-arranged to form a
+    /* function that determines whether elements in an array can be re-arranged to form a
      * consecutive list of numbers where each number appears exactly once.
      * O(n)?
      * */
-    static boolean consecutiveNumbers(int[] numbers) {
+    private static boolean consecutiveNumbers(int[] numbers) {
         var noDups = Arrays.stream(numbers).distinct();
         if (noDups.count() != numbers.length) return false;
 
@@ -36,4 +35,8 @@ class ConsecutiveNumbers {
     }
 
 
+    @Override
+    public void show() {
+        System.out.println(ConsecutiveNumbers.consecutiveNumbers(new int[]{5, 1, 4, 3, 2, 6}));
+    }
 }

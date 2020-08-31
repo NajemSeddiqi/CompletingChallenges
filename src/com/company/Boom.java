@@ -5,13 +5,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-class Boom {
+class Boom extends Challenge {
 
-    /* System.out.println(Boom.sevenBoom(new int[]{7, 5555587, 60, 96, 86}));
-     * return "Boom!" if the number 7 appears in the array.
+    /* return "Boom!" if the number 7 appears in the array.
      * O(n^2)?
      */
-    static String sevenBoom(int[] numbers) {
+    private static String sevenBoom(int[] numbers) {
         boolean contains = false;
 
         for (var i : stringifyIntArray(numbers)) {
@@ -39,5 +38,9 @@ class Boom {
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining("")).split("");
     }
-    //End
+
+    @Override
+    public void show() {
+        System.out.println(Boom.sevenBoom(new int[]{7, 5555587, 60, 96, 86}));
+    }
 }
