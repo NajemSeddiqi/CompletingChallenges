@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 
 class ConsecutiveNumbers extends Challenge {
@@ -10,7 +11,7 @@ class ConsecutiveNumbers extends Challenge {
      * O(n)?
      * */
     private static boolean consecutiveNumbers(int[] numbers) {
-        var noDups = Arrays.stream(numbers).distinct();
+        IntStream noDups = Arrays.stream(numbers).distinct();
         if (noDups.count() != numbers.length) return false;
 
         var consecutive = false;

@@ -17,7 +17,7 @@ class Boom extends Challenge {
 
             if (i.length() > 1) {
 
-                for (var j : i.toCharArray()) {
+                for (char j : i.toCharArray()) {
 
                     if (Integer.parseInt(String.valueOf(j)) == 7) {
                         contains = true;

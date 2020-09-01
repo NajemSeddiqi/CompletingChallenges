@@ -8,7 +8,7 @@ class ReverseOddLengthWords extends Challenge {
      * O(n)
      * */
     private String ReverseTheOddOnes(String str) {
-        var strArray = str.split(" ");
+        String[] strArray = str.split(" ");
         var correctString = new StringBuilder();
         StringBuilder stringBuilder;
 
