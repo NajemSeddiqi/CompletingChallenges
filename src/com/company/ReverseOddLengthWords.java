@@ -9,19 +9,26 @@ class ReverseOddLengthWords extends Challenge {
      * */
     private String ReverseTheOddOnes(String str) {
         String[] strArray = str.split(" ");
+        return getReversedWordString(strArray).toString();
+    }
+
+    private StringBuilder getReversedWordString(String[] strings) {
         var correctString = new StringBuilder();
         StringBuilder stringBuilder;
 
-        for (var i : strArray) {
-            if (i.length() % 2 != 0) {
-                stringBuilder = new StringBuilder(i).reverse().append(" ");
+        for (var i : strings) {
+            if (isStringLengthEven(i.length())) {
+                stringBuilder = new StringBuilder(i).append(" ");
             } else {
-                stringBuilder = new StringBuilder().append(i).append(" ");
+                stringBuilder = new StringBuilder(i).reverse().append(" ");
             }
             correctString.append(stringBuilder);
         }
+        return correctString;
+    }
 
-        return correctString.toString();
+    private boolean isStringLengthEven(int length) {
+        return length % 2 == 0;
     }
 
     @Override
