@@ -17,11 +17,11 @@ class ReverseOddLengthWords extends Challenge {
         StringBuilder stringBuilder;
 
         for (var i : strings) {
-            if (isStringLengthEven(i.length())) {
+            if (isStringLengthEven(i.length()))
                 stringBuilder = new StringBuilder(i).append(" ");
-            } else {
+            else
                 stringBuilder = new StringBuilder(i).reverse().append(" ");
-            }
+
             correctString.append(stringBuilder);
         }
         return correctString;

@@ -8,39 +8,14 @@ import java.util.stream.IntStream;
 class Boom extends Challenge {
 
     /* return "Boom!" if the number 7 appears in the array.
-     * O(n^2)?
+     *
      */
-    private static String sevenBoom(int[] numbers) {
-        boolean contains = false;
-
-        for (var i : stringifyIntArray(numbers)) {
-
-            if (i.length() > 1) {
-
-                for (char j : i.toCharArray()) {
-
-                    if (Integer.parseInt(String.valueOf(j)) == 7) {
-                        contains = true;
-                        break;
-                    }
-                }
-            } else if (Integer.parseInt(i) == 7) {
-                contains = true;
-                break;
-            }
-        }
-
-        return contains ? "Boom!" : "There are no sevens!";
-    }
-
-    private static String[] stringifyIntArray(int[] numbers) {
-        return IntStream.of(numbers)
-                .mapToObj(String::valueOf)
-                .collect(Collectors.joining("")).split("");
+    private String sevenBoom(int[] numbers) {
+        return Arrays.toString(numbers).contains("7") ? "Boom!" : "There are no sevens!";
     }
 
     @Override
     public void show() {
-        System.out.println(Boom.sevenBoom(new int[]{7, 5555587, 60, 96, 86}));
+        System.out.println(sevenBoom(new int[]{7, 555557, 60, 96, 86}));
     }
 }

@@ -10,19 +10,19 @@ class ConsecutiveNumbers extends Challenge {
      * consecutive list of numbers where each number appears exactly once.
      * O(n)?
      * */
-    private static boolean consecutiveNumbers(int[] numbers) {
+    private boolean consecutiveNumbers(int[] numbers) {
         IntStream noDups = Arrays.stream(numbers).distinct();
         if (noDups.count() != numbers.length) return false;
-
-        var consecutive = false;
         Arrays.sort(numbers);
+        return loopThroughNumbersAndVerify(numbers);
+    }
 
+    private boolean loopThroughNumbersAndVerify(int[] numbers) {
+        var consecutive = false;
         for (int i = 0, j = 1; i < numbers.length; i++, j++) {
             var curr = numbers[i];
             var next = numbers[j];
-
             if (!isOneLess(curr, next)) break;
-
             if (j == numbers.length - 1 && isOneLess(curr, next)) {
                 consecutive = true;
                 break;
@@ -31,13 +31,12 @@ class ConsecutiveNumbers extends Challenge {
         return consecutive;
     }
 
-    private static boolean isOneLess(int current, int next) {
+    private boolean isOneLess(int current, int next) {
         return next - current == 1;
     }
 
-
     @Override
     public void show() {
-        System.out.println(ConsecutiveNumbers.consecutiveNumbers(new int[]{5, 1, 4, 3, 2, 6}));
+        System.out.println(consecutiveNumbers(new int[]{5, 1, 4, 3, 2, 6}));
     }
 }
