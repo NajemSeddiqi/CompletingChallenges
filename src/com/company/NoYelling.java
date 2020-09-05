@@ -2,11 +2,12 @@ package com.company;
 
 import java.util.Arrays;
 
+/**
+ * function that transforms sentences ending with multiple question marks ? or exclamation points !
+ * into a sentence only ending with one of either without changing punctuation in the middle of the sentence.
+ */
 class NoYelling extends Challenge {
 
-    /* function that transforms sentences ending with multiple question marks ? or exclamation points !
-     * into a sentence only ending with one of either without changing punctuation in the middle of the sentence.
-     */
     private String stopYelling(String str) {
         if (!str.contains("!") && !str.contains("?")) return "Why?";
         String[] sentence = str.split(" ");

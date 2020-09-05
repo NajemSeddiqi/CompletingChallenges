@@ -4,12 +4,13 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 
+/**
+ * function that determines whether elements in an array can be re-arranged to form a
+ * consecutive list of numbers where each number appears exactly once.
+ * O(n)?
+ */
 class ConsecutiveNumbers extends Challenge {
 
-    /* function that determines whether elements in an array can be re-arranged to form a
-     * consecutive list of numbers where each number appears exactly once.
-     * O(n)?
-     * */
     private boolean consecutiveNumbers(int[] numbers) {
         IntStream noDups = Arrays.stream(numbers).distinct();
         if (noDups.count() != numbers.length) return false;

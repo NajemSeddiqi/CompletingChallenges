@@ -1,12 +1,13 @@
 package com.company;
 
-import java.util.Arrays;
+
+/**
+ * reverse all the words which have odd length. The even length words are not changed
+ * O(n)
+ */
 
 class ReverseOddLengthWords extends Challenge {
 
-    /* reverse all the words which have odd length. The even length words are not changed
-     * O(n)
-     * */
     private String ReverseTheOddOnes(String str) {
         String[] strArray = str.split(" ");
         return getReversedWordString(strArray).toString();

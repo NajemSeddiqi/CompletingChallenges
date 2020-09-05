@@ -1,6 +1,11 @@
 package com.company;
 
 
+/**
+ * When two blocks of the same "type" are adjacent to each other, the entire contiguous block
+ * disappears (pops off). If this occurs, this can allow previously separated blocks to be in
+ * contact with each other, setting off a chain reaction
+ */
 public class PoppingBlocks extends Challenge {
 
     /*
