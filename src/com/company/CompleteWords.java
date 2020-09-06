@@ -127,15 +127,8 @@ class UserData {
         return input;
     }
 
-    public void setInput(String input) {
-        this.input = input;
-    }
-
     public String getTarget() {
         return target;
     }
 
-    public void setTarget(String target) {
-        this.target = target;
-    }
 }
