@@ -33,16 +33,16 @@ public class Persistence extends Challenge {
     }
 
     private String multiplicativeReducer(int n) {
-        Optional<String> oI =
-                Arrays.stream(getIntArray(n))
-                        .reduce((a, b) -> String.valueOf(Integer.parseInt(a) * Integer.parseInt(b)));
+        Optional<String> oI = Arrays.stream(getIntArray(n))
+                .reduce((a, b) -> String.valueOf(Integer.parseInt(a) * Integer.parseInt(b)));
+
         return oI.orElseGet(() -> String.valueOf(true));
     }
 
     private String additiveReducer(int n) {
-        Optional<String> oI =
-                Arrays.stream(getIntArray(n))
-                        .reduce((a, b) -> String.valueOf(Integer.parseInt(a) + Integer.parseInt(b)));
+        Optional<String> oI = Arrays.stream(getIntArray(n))
+                .reduce((a, b) -> String.valueOf(Integer.parseInt(a) + Integer.parseInt(b)));
+
         return oI.orElseGet(() -> String.valueOf(true));
     }
 
