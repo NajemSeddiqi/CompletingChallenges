@@ -16,7 +16,7 @@ public class Persistence extends Challenge {
     }
 
 
-    private int reduceIfNotSingleDigit(int n, boolean isAdditive) {
+    private static int reduceIfNotSingleDigit(int n, boolean isAdditive) {
         if (String.valueOf(n).length() <= 1) return 0;
 
         String number = reducer(n, isAdditive);
@@ -28,25 +28,25 @@ public class Persistence extends Challenge {
         return count;
     }
 
-    private String reducer(int n, boolean isAdditive) {
+    private static String reducer(int n, boolean isAdditive) {
         return isAdditive ? additiveReducer(n) : multiplicativeReducer(n);
     }
 
-    private String multiplicativeReducer(int n) {
+    private static String multiplicativeReducer(int n) {
         Optional<String> oI = Arrays.stream(getIntArray(n))
                 .reduce((a, b) -> String.valueOf(Integer.parseInt(a) * Integer.parseInt(b)));
 
         return oI.orElseGet(() -> String.valueOf(true));
     }
 
-    private String additiveReducer(int n) {
+    private static String additiveReducer(int n) {
         Optional<String> oI = Arrays.stream(getIntArray(n))
                 .reduce((a, b) -> String.valueOf(Integer.parseInt(a) + Integer.parseInt(b)));
 
         return oI.orElseGet(() -> String.valueOf(true));
     }
 
-    private String[] getIntArray(int n) {
+    private static String[] getIntArray(int n) {
         return String.valueOf(n).split("");
     }
 

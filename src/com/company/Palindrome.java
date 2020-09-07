@@ -9,13 +9,13 @@ import java.util.Arrays;
  */
 public class Palindrome extends Challenge {
 
-    private String firstHalf;
-    private String secondHalf;
-    private ArrayList<Character> resultList = new ArrayList<>();
-    private int changeAtIndex = 0;
-    private char diff = '0';
+    private static String firstHalf;
+    private static String secondHalf;
+    private static ArrayList<Character> resultList = new ArrayList<>();
+    private static int changeAtIndex = 0;
+    private static char diff = '0';
 
-    private boolean isAlmostPalindrome(String str) {
+    private static boolean isAlmostPalindrome(String str) {
         firstHalf = str.substring(0, (str.length() / 2));
         secondHalf = new StringBuilder(str.substring((str.length() / 2))).reverse().toString();
 
@@ -27,14 +27,14 @@ public class Palindrome extends Challenge {
         return isPalindrome(leftSet, rightSet, isEven);
     }
 
-    private ArrayList<Character> oneSimpleChange() {
+    private static ArrayList<Character> oneSimpleChange() {
         int length = Math.min(firstHalf.length(), secondHalf.length());
         addFirstHalfToResultList(length);
         addSecondHalfToResultList();
         return resultList;
     }
 
-    private void addFirstHalfToResultList(int length) {
+    private static void addFirstHalfToResultList(int length) {
         for (var i = 0; i < length; i++) {
             if (firstHalf.charAt(i) != secondHalf.charAt(i)) {
                 changeAtIndex = i;
@@ -44,7 +44,7 @@ public class Palindrome extends Challenge {
         }
     }
 
-    private void addSecondHalfToResultList() {
+    private static void addSecondHalfToResultList() {
         for (var i = 0; i < secondHalf.length(); i++) {
             if (i == changeAtIndex) {
                 resultList.add(diff);
@@ -55,7 +55,7 @@ public class Palindrome extends Challenge {
     }
 
 
-    private boolean isPalindrome(Object[] leftSet, Object[] rightSet, boolean isEven) {
+    private static boolean isPalindrome(Object[] leftSet, Object[] rightSet, boolean isEven) {
         return isEven ? Arrays.equals(leftSet, rightSet) : Arrays.equals(leftSet, Arrays.copyOf(rightSet, rightSet.length - 1));
     }
 

@@ -7,14 +7,14 @@ import java.util.*;
  */
 public class SockPairs extends Challenge {
 
-    private int getSockPairs(String str) {
+    private static int getSockPairs(String str) {
         var original = new ArrayList<>(List.of(str.split("")));
         var result = new HashMap<String, Integer>();
         original.forEach(s -> result.put(s, Collections.frequency(original, s)));
         return countAndReturnPairs(result);
     }
 
-    private int countAndReturnPairs(HashMap<String, Integer> result) {
+    private static int countAndReturnPairs(HashMap<String, Integer> result) {
         var count = 0;
         for (Map.Entry<String, Integer> e : result.entrySet()) {
             count++;

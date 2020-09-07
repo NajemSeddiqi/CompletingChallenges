@@ -8,12 +8,12 @@ package com.company;
 
 class ReverseOddLengthWords extends Challenge {
 
-    private String ReverseTheOddOnes(String str) {
+    private static String ReverseTheOddOnes(String str) {
         String[] strArray = str.split(" ");
         return getReversedWordString(strArray).toString();
     }
 
-    private StringBuilder getReversedWordString(String[] strings) {
+    private static StringBuilder getReversedWordString(String[] strings) {
         var correctString = new StringBuilder();
         StringBuilder stringBuilder;
 
@@ -28,7 +28,7 @@ class ReverseOddLengthWords extends Challenge {
         return correctString;
     }
 
-    private boolean isStringLengthEven(int length) {
+    private static boolean isStringLengthEven(int length) {
         return length % 2 == 0;
     }
 

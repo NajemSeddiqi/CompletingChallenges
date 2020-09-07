@@ -9,9 +9,9 @@ import java.util.ArrayList;
  */
 public class CompleteWords extends Challenge {
 
-    private UserData userData;
+    private static UserData userData;
 
-    private boolean canComplete(String input, String target) {
+    private static boolean canComplete(String input, String target) {
         if (input.charAt(0) != target.charAt(0)
                 || input.charAt(input.length() - 1) != target.charAt(target.length() - 1)
                 || containsInvalidDuplicates(input, target))
@@ -24,7 +24,7 @@ public class CompleteWords extends Challenge {
         return sb.toString().equalsIgnoreCase(target);
     }
 
-    private void completeTheWord(StringBuilder sb) {
+    private static void completeTheWord(StringBuilder sb) {
         var idxArray = new ArrayList<Integer>();
 
         int i = 0, j = 0, insertAtIndex = 0;
@@ -48,25 +48,25 @@ public class CompleteWords extends Challenge {
         }
     }
 
-    private void setCurrAndNext(int i, int j) {
+    private static void setCurrAndNext(int i, int j) {
         userData.setCurr(userData.getInput().charAt(i));
         userData.setNext(userData.getTarget().charAt(j));
     }
 
-    private int getIfMultipleOccurrenceExists(ArrayList<Integer> idxArray, int currIndex) {
+    private static int getIfMultipleOccurrenceExists(ArrayList<Integer> idxArray, int currIndex) {
         return idxArray.contains(currIndex) ? getIndexOfSecondOccurrence() : getIndexOf();
     }
 
-    private int getIndexOf() {
+    private static int getIndexOf() {
         return userData.getTarget().indexOf(userData.getNext());
     }
 
-    private int getIndexOfSecondOccurrence() {
+    private static int getIndexOfSecondOccurrence() {
         return userData.getTarget().indexOf(userData.getNext(), userData.getTarget().indexOf(userData.getNext()) + 1);
     }
 
 
-    private boolean containsInvalidDuplicates(String input, String target) {
+    private static boolean containsInvalidDuplicates(String input, String target) {
         boolean containsDuplicate = false;
         for (Long i : getAmountOfContains(input, target)) {
             if (i > 1) {
@@ -77,7 +77,7 @@ public class CompleteWords extends Challenge {
         return containsDuplicate;
     }
 
-    private ArrayList<Long> getAmountOfContains(String input, String target) {
+    private static ArrayList<Long> getAmountOfContains(String input, String target) {
         var amountOfContainsArray = new ArrayList<Long>();
         for (char i : target.toCharArray()) {
             long count = input.chars().filter(c -> c == i).count();

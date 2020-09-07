@@ -8,7 +8,7 @@ package com.company;
  */
 public class PoppingBlocks extends Challenge {
 
-    private char[] popOff(char[] charArray) {
+    private static char[] popOff(char[] charArray) {
         StringBuilder sb = new StringBuilder(new String(charArray));
 
         int index = getRepeatingIndexOfChar(sb.toString());
@@ -26,7 +26,7 @@ public class PoppingBlocks extends Challenge {
 
     }
 
-    private int getRepeatingIndexOfChar(String s) {
+    private static int getRepeatingIndexOfChar(String s) {
         for (var i = 0; i < s.length() - 1; i++) {
             char curr = s.charAt(i);
             char next = s.charAt(i + 1);
