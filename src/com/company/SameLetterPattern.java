@@ -15,10 +15,8 @@ public class SameLetterPattern extends Challenge {
 
     private static int getAmountOfRepeatingChars(String s) {
         var count = 0;
-        for (var i = 0; i < s.length(); i++) {
-            char curr = i == s.length() - 1 ? s.charAt(i - 1) : s.charAt(i);
-            char next = i == s.length() - 1 ? curr : s.charAt(i + 1);
-            if (curr == next)
+        for (var i = 0; i < s.length() - 1; i++) {
+            if (s.charAt(i) == s.charAt(i + 1))
                 count++;
         }
         return count;
@@ -26,12 +24,12 @@ public class SameLetterPattern extends Challenge {
 
     @Override
     public void show() {
-//        System.out.println(hasSamePattern("ABAB", "CDCD"));
-//        System.out.println(hasSamePattern("ABCBA", "BCDCB"));
-//        System.out.println(hasSamePattern("FFGG", "CDCD"));
-//        System.out.println(hasSamePattern("FFFF", "ABCD"));
-//        System.out.println(hasSamePattern("AAABBB", "CCCDDD"));
-//        System.out.println(hasSamePattern("AAAA", "BBBB"));
+        System.out.println(hasSamePattern("ABAB", "CDCD"));
+        System.out.println(hasSamePattern("ABCBA", "BCDCB"));
+        System.out.println(hasSamePattern("FFGG", "CDCD"));
+        System.out.println(hasSamePattern("FFFF", "ABCD"));
+        System.out.println(hasSamePattern("AAABBB", "CCCDDD"));
+        System.out.println(hasSamePattern("AAAA", "BBBB"));
         System.out.println(hasSamePattern("BAAB", "QZZQ"));
         System.out.println(hasSamePattern("ABCA", "ABCD"));
     }

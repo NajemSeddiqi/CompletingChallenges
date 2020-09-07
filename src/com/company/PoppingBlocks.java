@@ -28,9 +28,7 @@ public class PoppingBlocks extends Challenge {
 
     private static int getRepeatingIndexOfChar(String s) {
         for (var i = 0; i < s.length() - 1; i++) {
-            char curr = s.charAt(i);
-            char next = s.charAt(i + 1);
-            if (curr == next)
+            if (s.charAt(i) == s.charAt(i + 1))
                 return i;
         }
         return -1;

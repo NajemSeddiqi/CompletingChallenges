@@ -21,9 +21,9 @@ public class SmoothSentence extends Challenge {
         var isSmoothList = new ArrayList<Boolean>();
         isSmoothList.add(true);
 
-        for (var i = 0; i < s.length; i++) {
+        for (var i = 0; i < s.length - 1; i++) {
             String curr = s[i];
-            String next = i != s.length - 1 ? s[i + 1] : curr;
+            String next = s[i + 1];
             var currChar = Character.toLowerCase(curr.charAt(curr.length() - 1));
             var nextChar = Character.toLowerCase(next.charAt(0));
             if (currChar == nextChar)
