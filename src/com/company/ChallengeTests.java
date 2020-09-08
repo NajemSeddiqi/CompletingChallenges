@@ -5,89 +5,74 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
+    private BookEnd bookEnd;
+
+    public ChallengeTests() {
+        bookEnd = new BookEnd();
+    }
 
     @Test
     public void test1() {
-        assertTrue(SameLetterPattern.hasSamePattern("ABAB", "CDCD"));
+        assertEquals(4, bookEnd.countUniqueBooks("AZYWABBCATTTA", 'A'));
     }
 
     @Test
     public void test2() {
-        assertTrue(SameLetterPattern.hasSamePattern("AAABBB", "CCCDDD"));
+        assertEquals(3, bookEnd.countUniqueBooks("$AA$BBCATT$C$$B$", '$'));
     }
 
     @Test
     public void test3() {
-        assertTrue(SameLetterPattern.hasSamePattern("ABCBA", "BCDCB"));
+        assertEquals(0, bookEnd.countUniqueBooks("ZZABCDEF", 'Z'));
     }
 
     @Test
     public void test4() {
-        assertTrue(SameLetterPattern.hasSamePattern("AAAA", "BBBB"));
+        assertEquals(6, bookEnd.countUniqueBooks("A#BBCD##GGA##!#", '#'));
     }
 
     @Test
     public void test5() {
-        assertTrue(SameLetterPattern.hasSamePattern("BAAB", "ABBA"));
+        assertEquals(1, bookEnd.countUniqueBooks("&AAAAAAAAAAAA&", '&'));
     }
 
     @Test
     public void test6() {
-        assertTrue(SameLetterPattern.hasSamePattern("BAAB", "QZZQ"));
+        assertEquals(0, bookEnd.countUniqueBooks("&&&&&&&&", '&'));
     }
 
     @Test
     public void test7() {
-        assertTrue(SameLetterPattern.hasSamePattern("TTZZVV", "PPSSBB"));
+        assertEquals(2, bookEnd.countUniqueBooks("&A&&&&&&C&", '&'));
     }
 
     @Test
     public void test8() {
-        assertTrue(SameLetterPattern.hasSamePattern("ZYX", "ABC"));
+        assertEquals(2, bookEnd.countUniqueBooks("&A&33333&C&", '&'));
     }
 
     @Test
     public void test9() {
-        assertTrue(SameLetterPattern.hasSamePattern("AABAA", "SSCSS"));
+        assertEquals(1, bookEnd.countUniqueBooks("&3&3&3&", '&'));
     }
 
     @Test
     public void test10() {
-        assertTrue(SameLetterPattern.hasSamePattern("AABAABAA", "SSCSSCSS"));
+        assertEquals(2, bookEnd.countUniqueBooks("&4&3&3&", '&'));
     }
 
     @Test
     public void test11() {
-        assertTrue(SameLetterPattern.hasSamePattern("UBUBUBUB", "WEWEWEWE"));
+        assertEquals(0, bookEnd.countUniqueBooks("&AA&", 'A'));
     }
 
     @Test
     public void test12() {
-        assertFalse(SameLetterPattern.hasSamePattern("FFGG", "FFG"));
+        assertEquals(3, bookEnd.countUniqueBooks("AZAAABDZCCZZ", 'Z'));
     }
 
     @Test
     public void test13() {
-        assertFalse(SameLetterPattern.hasSamePattern("FFGG", "CDCD"));
-    }
-
-    @Test
-    public void test14() {
-        assertFalse(SameLetterPattern.hasSamePattern("FFFG", "GGHI"));
-    }
-
-    @Test
-    public void test15() {
-        assertFalse(SameLetterPattern.hasSamePattern("FFFF", "ABCD"));
-    }
-
-    @Test
-    public void test16() {
-        assertFalse(SameLetterPattern.hasSamePattern("ABCA", "ABCD"));
-    }
-
-    @Test
-    public void test17() {
-        assertFalse(SameLetterPattern.hasSamePattern("ABCAAA", "DDABCD"));
+        assertEquals(1, bookEnd.countUniqueBooks("AZAAABDZCCZZ", 'A'));
     }
 }
