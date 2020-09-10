@@ -12,9 +12,9 @@ public class CompleteWords extends Challenge {
     private static UserData userData;
 
     private static boolean canComplete(String input, String target) {
-        if (input.charAt(0) != target.charAt(0)
-                || input.charAt(input.length() - 1) != target.charAt(target.length() - 1)
-                || containsInvalidDuplicates(input, target))
+        boolean a = input.charAt(0) != target.charAt(0);
+        boolean b = input.charAt(input.length() - 1) != target.charAt(target.length() - 1);
+        if (a || b || containsInvalidDuplicates(input, target))
             return false;
 
         StringBuilder sb = new StringBuilder(input);
