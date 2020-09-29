@@ -2,77 +2,52 @@ package com.company;
 
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private BookEnd bookEnd;
+    private VowelFamilies vowelFamilies;
 
     public ChallengeTests() {
-        bookEnd = new BookEnd();
+        vowelFamilies = new VowelFamilies();
     }
 
     @Test
     public void test1() {
-        assertEquals(4, bookEnd.countUniqueBooks("AZYWABBCATTTA", 'A'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"hoops", "chuff", "bot", "bottom"}), is(new String[]{"hoops", "bot", "bottom"}));
     }
 
     @Test
     public void test2() {
-        assertEquals(3, bookEnd.countUniqueBooks("$AA$BBCATT$C$$B$", '$'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"crop", "nomnom", "bolo", "yodeller"}), is(new String[]{"crop", "nomnom",
+                "bolo"}));
     }
 
     @Test
     public void test3() {
-        assertEquals(0, bookEnd.countUniqueBooks("ZZABCDEF", 'Z'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"semantic", "aimless", "beautiful", "meatless icecream"}), is(new String[]{
+                "semantic", "aimless", "meatless icecream"}));
     }
 
     @Test
     public void test4() {
-        assertEquals(6, bookEnd.countUniqueBooks("A#BBCD##GGA##!#", '#'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"many", "carriage", "emit", "apricot"}), is(new String[]{"many"}));
     }
 
     @Test
     public void test5() {
-        assertEquals(1, bookEnd.countUniqueBooks("&AAAAAAAAAAAA&", '&'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"toe", "ocelot", "maniac"}), is(new String[]{"toe", "ocelot"}));
     }
 
     @Test
     public void test6() {
-        assertEquals(0, bookEnd.countUniqueBooks("&&&&&&&&", '&'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"a", "apple", "flat", "map", "shark"}), is(new String[]{"a", "flat", "map",
+                "shark"}));
     }
 
     @Test
     public void test7() {
-        assertEquals(2, bookEnd.countUniqueBooks("&A&&&&&&C&", '&'));
-    }
-
-    @Test
-    public void test8() {
-        assertEquals(2, bookEnd.countUniqueBooks("&A&33333&C&", '&'));
-    }
-
-    @Test
-    public void test9() {
-        assertEquals(1, bookEnd.countUniqueBooks("&3&3&3&", '&'));
-    }
-
-    @Test
-    public void test10() {
-        assertEquals(2, bookEnd.countUniqueBooks("&4&3&3&", '&'));
-    }
-
-    @Test
-    public void test11() {
-        assertEquals(0, bookEnd.countUniqueBooks("&AA&", 'A'));
-    }
-
-    @Test
-    public void test12() {
-        assertEquals(3, bookEnd.countUniqueBooks("AZAAABDZCCZZ", 'Z'));
-    }
-
-    @Test
-    public void test13() {
-        assertEquals(1, bookEnd.countUniqueBooks("AZAAABDZCCZZ", 'A'));
+        assertThat(vowelFamilies.sameVowelGroup(new String[]{"a", "aa", "ab", "abc", "aaac", "abe"}), is(new String[]{"a", "aa", "ab",
+                "abc", "aaac"}));
     }
 }

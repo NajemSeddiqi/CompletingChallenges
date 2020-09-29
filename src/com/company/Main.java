@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
 
-    public static void main(String[] args) {
-        new BookEnd().show();
+    static public void main(String... args) {
+        new VowelFamilies().show();
     }
 }

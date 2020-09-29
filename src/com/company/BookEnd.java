@@ -14,7 +14,7 @@ public class BookEnd extends Challenge {
     private ArrayList<Integer> counts = new ArrayList<>();
     private int count = 1;
 
-    int countUniqueBooks(String books, char bookend) {
+    private int countUniqueBooks(String books, char bookend) {
         this.books = books;
         this.bookend = bookend;
 

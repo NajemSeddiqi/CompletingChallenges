@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 class NoYelling extends Challenge {
 
-    private static String stopYelling(String str) {
+    private String stopYelling(String str) {
         if (!str.contains("!") && !str.contains("?")) return "Why?";
         String[] sentence = str.split(" ");
         String lastStringInSentence = sentence[sentence.length - 1];
@@ -16,12 +16,12 @@ class NoYelling extends Challenge {
         return getModifiedString(lastStringInSentence, initialStrings, sentence);
     }
 
-    private static long getAmountOfMarks(String lastStringInSentence) {
+    private long getAmountOfMarks(String lastStringInSentence) {
         char type = lastStringInSentence.contains("!") ? '!' : '?';
         return lastStringInSentence.chars().filter(n -> n == type).count() - 1;
     }
 
-    private static String getModifiedString(String lastStringInSentence, String initialStrings, String[] sentence) {
+    private String getModifiedString(String lastStringInSentence, String initialStrings, String[] sentence) {
         return Arrays.toString(sentence)
                 .replace(lastStringInSentence, initialStrings)
                 .replace(",", "")

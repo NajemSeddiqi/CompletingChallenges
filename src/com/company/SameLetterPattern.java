@@ -6,14 +6,19 @@ package com.company;
  */
 public class SameLetterPattern extends Challenge {
 
-    static boolean hasSamePattern(String input, String target) {
+    private boolean hasSamePattern(String input, String target) {
         if (input.length() != target.length()) return false;
+        boolean lastOnesNotEqual =
+                !input.substring(input.length() - 2, input.length() - 1).equalsIgnoreCase(target.substring(target.length() - 2, target.length() - 1));
+
+        boolean firstOnesNotEqual = !input.substring(0, 1).equalsIgnoreCase(target.substring(0, 1));
+
         return getAmountOfRepeatingChars(input) == getAmountOfRepeatingChars(target)
-                && !input.substring(input.length() - 2, input.length() - 1).equalsIgnoreCase(target.substring(target.length() - 2, target.length() - 1))
-                && !input.substring(0, 1).equalsIgnoreCase(target.substring(0, 1));
+                && lastOnesNotEqual
+                && firstOnesNotEqual;
     }
 
-    private static int getAmountOfRepeatingChars(String s) {
+    private int getAmountOfRepeatingChars(String s) {
         var count = 0;
         for (var i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) == s.charAt(i + 1))

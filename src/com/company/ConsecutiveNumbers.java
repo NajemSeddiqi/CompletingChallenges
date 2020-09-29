@@ -11,14 +11,14 @@ import java.util.stream.IntStream;
  */
 class ConsecutiveNumbers extends Challenge {
 
-    private static boolean consecutiveNumbers(int[] numbers) {
+    private boolean consecutiveNumbers(int[] numbers) {
         IntStream noDups = Arrays.stream(numbers).distinct();
         if (noDups.count() != numbers.length) return false;
         Arrays.sort(numbers);
         return loopThroughNumbersAndVerify(numbers);
     }
 
-    private static boolean loopThroughNumbersAndVerify(int[] numbers) {
+    private boolean loopThroughNumbersAndVerify(int[] numbers) {
         var consecutive = false;
         for (int i = 0, j = 1; i < numbers.length; i++, j++) {
             var curr = numbers[i];
@@ -32,7 +32,7 @@ class ConsecutiveNumbers extends Challenge {
         return consecutive;
     }
 
-    private static boolean isOneLess(int current, int next) {
+    private boolean isOneLess(int current, int next) {
         return next - current == 1;
     }
 

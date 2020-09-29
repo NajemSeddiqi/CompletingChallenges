@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class SmoothSentence extends Challenge {
 
-    private static boolean isSmooth(String str) throws Exception {
+    private boolean isSmooth(String str) throws Exception {
         if (str.isBlank() || str.isEmpty())
             throw new Exception("Please no blanks.");
 
@@ -17,7 +17,7 @@ public class SmoothSentence extends Challenge {
         return checkSmoothnessAndReturnList(s).size() >= s.length;
     }
 
-    private static ArrayList<Boolean> checkSmoothnessAndReturnList(String[] s) {
+    private ArrayList<Boolean> checkSmoothnessAndReturnList(String[] s) {
         var isSmoothList = new ArrayList<Boolean>();
         isSmoothList.add(true);
 
