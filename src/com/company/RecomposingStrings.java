@@ -1,9 +1,15 @@
 package com.company;
 
+
+/**
+ * Every string has to be reversed not in its totality, but by vowels or consonants clusters in the order they are found.
+ * After splitting the string in groups, and reversing every group with more than a letter,
+ * you'll obtain the correct sequence.
+ */
 public class RecomposingStrings extends Challenge {
     private StringBuilder recomposedSb = new StringBuilder();
 
-    String recompose(String str) {
+    private String recompose(String str) {
 
         for (var i = 0; i < str.length(); ) {
             var consonantIdx = 1;

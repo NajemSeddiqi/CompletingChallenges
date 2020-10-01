@@ -2,9 +2,17 @@ package com.company;
 
 import java.util.*;
 
+
+/**
+ * selects all words that have all the same vowels (in any order and/or number) as the first word,
+ * including the first word.
+ * Frequency does not matter e.g. if the first word is "loopy",
+ * then you can include words with any number of o's, so long as they only
+ * contain o's, and not any other vowels.
+ */
 public class VowelFamilies extends Challenge {
 
-    String[] sameVowelGroup(String[] strings) {
+    private String[] sameVowelGroup(String[] strings) {
         var everyVowel = new HashMap<Integer, HashSet<Character>>();
         var families = new ArrayList<>(Collections.singleton(strings[0]));
 
