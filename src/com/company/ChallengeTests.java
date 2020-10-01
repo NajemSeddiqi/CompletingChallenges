@@ -6,48 +6,44 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private VowelFamilies vowelFamilies;
+    private RecomposingStrings recomposingStrings = new RecomposingStrings();
 
     public ChallengeTests() {
-        vowelFamilies = new VowelFamilies();
+
     }
 
     @Test
     public void test1() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"hoops", "chuff", "bot", "bottom"}), is(new String[]{"hoops", "bot", "bottom"}));
+        assertEquals("Kid Koala", recomposingStrings.recompose("KiKdaola"));
     }
 
     @Test
     public void test2() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"crop", "nomnom", "bolo", "yodeller"}), is(new String[]{"crop", "nomnom",
-                "bolo"}));
+        assertEquals("Boards Of Canada", recomposingStrings.recompose("BaosdrOCfanada"));
     }
 
     @Test
     public void test3() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"semantic", "aimless", "beautiful", "meatless icecream"}), is(new String[]{
-                "semantic", "aimless", "meatless icecream"}));
+        assertEquals("Chemical Brothers", recomposingStrings.recompose("hCemicarBlohtesr"));
     }
 
     @Test
     public void test4() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"many", "carriage", "emit", "apricot"}), is(new String[]{"many"}));
+        assertEquals("Mouse On Mars", recomposingStrings.recompose("MuosOeMnasr"));
     }
 
     @Test
     public void test5() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"toe", "ocelot", "maniac"}), is(new String[]{"toe", "ocelot"}));
+        assertEquals("Aphex Twin", recomposingStrings.recompose("AhpewTxin"));
     }
 
     @Test
     public void test6() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"a", "apple", "flat", "map", "shark"}), is(new String[]{"a", "flat", "map",
-                "shark"}));
+        assertEquals("Massive Attack", recomposingStrings.recompose("MassivAettakc"));
     }
 
     @Test
     public void test7() {
-        assertThat(vowelFamilies.sameVowelGroup(new String[]{"a", "aa", "ab", "abc", "aaac", "abe"}), is(new String[]{"a", "aa", "ab",
-                "abc", "aaac"}));
+        assertEquals("Does It Offend You Yeah", recomposingStrings.recompose("DeosItOffeYdnuoYaeh"));
     }
 }
