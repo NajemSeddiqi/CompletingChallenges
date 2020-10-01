@@ -120,7 +120,7 @@ public class RecomposingStrings extends Challenge {
     }
 
 
-    private class Data {
+    private static class Data {
         private String str;
         private int loopIndex;
         private int nucleiIndex;

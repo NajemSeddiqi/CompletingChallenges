@@ -94,41 +94,43 @@ public class CompleteWord extends Challenge {
         System.out.println(canComplete("sg", "something"));
         System.out.println(canComplete("sgi", "something"));
     }
+
+    static class UserData {
+        private char curr;
+        private char next;
+        private String input;
+        private String target;
+
+        UserData(String input, String target) {
+            this.input = input;
+            this.target = target;
+        }
+
+        char getCurr() {
+            return curr;
+        }
+
+        void setCurr(char curr) {
+            this.curr = curr;
+        }
+
+        char getNext() {
+            return next;
+        }
+
+        void setNext(char next) {
+            this.next = next;
+        }
+
+        String getInput() {
+            return input;
+        }
+
+        String getTarget() {
+            return target;
+        }
+
+    }
 }
 
-class UserData {
-    private char curr;
-    private char next;
-    private String input;
-    private String target;
 
-    UserData(String input, String target) {
-        this.input = input;
-        this.target = target;
-    }
-
-    char getCurr() {
-        return curr;
-    }
-
-    void setCurr(char curr) {
-        this.curr = curr;
-    }
-
-    char getNext() {
-        return next;
-    }
-
-    void setNext(char next) {
-        this.next = next;
-    }
-
-    String getInput() {
-        return input;
-    }
-
-    String getTarget() {
-        return target;
-    }
-
-}
