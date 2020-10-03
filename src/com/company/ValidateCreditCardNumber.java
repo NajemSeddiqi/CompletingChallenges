@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class ValidateCreditCardNumber extends Challenge {
 
-    boolean validateCard(long number) {
+    private boolean validateCard(long number) {
         String strNum = Long.valueOf(number).toString();
         if (strNum.length() < 14 || strNum.length() > 19) return false;
 
