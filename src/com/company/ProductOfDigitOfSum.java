@@ -9,7 +9,7 @@ import java.util.Optional;
  */
 public class ProductOfDigitOfSum extends Challenge {
 
-    int sumDigProd(int... args) {
+    private int sumDigProd(int... args) {
         Integer a = getIfArgsLengthEqualsOne(args);
         if (a != null) return a;
 
