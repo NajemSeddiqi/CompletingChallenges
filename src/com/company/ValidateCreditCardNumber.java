@@ -2,6 +2,9 @@ package com.company;
 
 import java.util.ArrayList;
 
+/**
+ * Credit card numbers must be between 14-19 digits in length, and pass the Luhn test
+ */
 public class ValidateCreditCardNumber extends Challenge {
 
     boolean validateCard(long number) {
