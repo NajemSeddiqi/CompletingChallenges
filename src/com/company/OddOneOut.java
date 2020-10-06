@@ -4,7 +4,7 @@ import java.util.*;
 
 public class OddOneOut extends Challenge {
 
-    boolean oddOneOut(String[] words) {
+    private boolean oddOneOut(String[] words) {
         var lengthArray = new ArrayList<Integer>();
         var result = new HashMap<Integer, Integer>();
 

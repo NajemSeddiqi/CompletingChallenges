@@ -14,7 +14,7 @@ public class BookEnd extends Challenge {
     private ArrayList<Integer> counts = new ArrayList<>();
     private int count = 1;
 
-    private int countUniqueBooks(String books, char bookend) {
+    int countUniqueBooks(String books, char bookend) {
         this.books = books;
         this.bookend = bookend;
 
@@ -48,7 +48,7 @@ public class BookEnd extends Challenge {
             if (s.length() >= 2)
                 countLargeBookendGroup(s);
             else
-                countSmallBookendGroup(s);
+                counts.add(1);
 
             count = 1;
         }
@@ -60,14 +60,6 @@ public class BookEnd extends Challenge {
             if (s.charAt(i) != s.charAt(i + 1))
                 count++;
 
-        counts.add(count);
-    }
-
-    private void countSmallBookendGroup(String s) {
-        for (var i = 0; i < s.length(); i++)
-            count++;
-
-        count = 1;
         counts.add(count);
     }
 
