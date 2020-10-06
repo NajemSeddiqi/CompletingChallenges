@@ -3,6 +3,6 @@ package com.company;
 public class Main {
 
     static public void main(String... args) {
-        new AccurateReversal().show();
+        new OddOneOut().show();
     }
 }

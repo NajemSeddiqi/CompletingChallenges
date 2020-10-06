@@ -6,40 +6,34 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private AccurateReversal a = new AccurateReversal();
+    private OddOneOut o = new OddOneOut();
 
     public ChallengeTests() {
 
     }
 
-
     @Test
     public void test1() {
-        assertEquals("Tibade", a.specialReverseString("Edabit"));
+        assertTrue(o.oddOneOut(new String[]{"silly", "mom", "let", "the"}));
     }
 
     @Test
     public void test2() {
-        assertEquals("REWOL reppu", a.specialReverseString("UPPER lower"));
+        assertTrue(o.oddOneOut(new String[]{"swanky", "rhino", "moment"}));
     }
 
     @Test
     public void test3() {
-        assertEquals("6 54 321", a.specialReverseString("1 23 456"));
+        assertFalse(o.oddOneOut(new String[]{"the", "them", "theme"}));
     }
 
     @Test
     public void test4() {
-        assertEquals("!dlro Wolleh", a.specialReverseString("Hello World!"));
+        assertFalse(o.oddOneOut(new String[]{"very", "to", "an", "some"}));
     }
 
     @Test
     public void test5() {
-        assertEquals("?ysiadg odru oys 'erehw", a.specialReverseString("Where's your dog Daisy?"));
-    }
-
-    @Test
-    public void test6() {
-        assertEquals("Stee hsely tsgn IDA csacs Naemsscta Htnwo Nks'ti", a.specialReverseString("It's known that CSS means Cascading Style Sheets"));
+        assertTrue(o.oddOneOut(new String[]{"very", "to", "then", "some"}));
     }
 }
