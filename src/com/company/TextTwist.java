@@ -2,9 +2,18 @@ package com.company;
 
 import java.util.*;
 
+/**
+ * a function that takes in an array of already-guessed words,
+ * the unscrambled 6-letter word and returns the total number of points a player scored in a particular round using the following rubric:
+ * 3-letter words are 1 pt
+ * 4-letter words are 2 pts
+ * 5-letter words are 3 pts
+ * 6-letter words are 4 pts + 50 pt bonus (for unscrambling the word)
+ * words that cannot be formed from the 6-letter unscrambled words count as 0 pts i.e invalid words
+ */
 public class TextTwist extends Challenge {
 
-    int totalPoints(String[] words, String unScrambledWord) {
+    private int totalPoints(String[] words, String unScrambledWord) {
         var pointArray = new ArrayList<Integer>();
 
         for (String word : words) {

@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * A left-truncatable prime is a prime number that contains no 0 digits and,
+ * when the first digit is successively removed, the result is always prime,
+ * and vice versa for a Right-truncatable prime
+ */
 public class TruncatablePrimes extends Challenge {
     enum Side {NONE, LEFT, RIGHT, BOTH}
 
