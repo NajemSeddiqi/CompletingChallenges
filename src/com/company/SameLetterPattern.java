@@ -20,10 +20,10 @@ public class SameLetterPattern extends Challenge {
 
     private int getAmountOfRepeatingChars(String s) {
         var count = 0;
-        for (var i = 0; i < s.length() - 1; i++) {
+        for (var i = 0; i < s.length() - 1; i++)
             if (s.charAt(i) == s.charAt(i + 1))
                 count++;
-        }
+
         return count;
     }
 

@@ -6,53 +6,77 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private PalindromeDescendant p = new PalindromeDescendant();
+    private TruncatablePrimes t = new TruncatablePrimes();
 
     public ChallengeTests() {
     }
 
     @Test
     public void test1() {
-        assertThat(p.palindromeDescendant(11211230), is(true));
+        assertEquals(TruncatablePrimes.Side.LEFT, t.truncatable(47));
     }
 
     @Test
     public void test2() {
-        assertThat(p.palindromeDescendant(13001120), is(true));
+        assertEquals(TruncatablePrimes.Side.LEFT, t.truncatable(347));
     }
 
     @Test
     public void test3() {
-        assertThat(p.palindromeDescendant(23336014), is(true));
+        assertEquals(TruncatablePrimes.Side.LEFT, t.truncatable(62383));
     }
 
     @Test
     public void test4() {
-        assertThat(p.palindromeDescendant(11), is(true));
+        assertEquals(TruncatablePrimes.Side.RIGHT, t.truncatable(79));
     }
 
     @Test
     public void test5() {
-        assertThat(p.palindromeDescendant(1122), is(false));
+        assertEquals(TruncatablePrimes.Side.RIGHT, t.truncatable(7331));
     }
 
     @Test
     public void test6() {
-        assertThat(p.palindromeDescendant(332233), is(true));
+        assertEquals(TruncatablePrimes.Side.RIGHT, t.truncatable(233993));
     }
 
     @Test
     public void test7() {
-        assertThat(p.palindromeDescendant(10210112), is(true));
+        assertEquals(TruncatablePrimes.Side.BOTH, t.truncatable(3797));
     }
 
     @Test
     public void test8() {
-        assertThat(p.palindromeDescendant(9735), is(false));
+        assertEquals(TruncatablePrimes.Side.BOTH, t.truncatable(739397));
     }
 
     @Test
     public void test9() {
-        assertThat(p.palindromeDescendant(97358817), is(false));
+        System.out.println("Single-digit number treated as both.");
+        assertEquals(TruncatablePrimes.Side.BOTH, t.truncatable(5));
+    }
+
+    @Test
+    public void test10() {
+        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(349));
+    }
+
+    @Test
+    public void test11() {
+        System.out.println("The starting number is composite.");
+        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(2317));
+    }
+
+    @Test
+    public void test12() {
+        System.out.println("1 is not a prime.");
+        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(131));
+    }
+
+    @Test
+    public void test13() {
+        System.out.println("Cannot contain a 0 digit.");
+        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(6043));
     }
 }

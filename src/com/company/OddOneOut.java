@@ -2,6 +2,14 @@ package com.company;
 
 import java.util.*;
 
+/**
+ * function that returns true if exactly one word in the array differs in length from the rest.
+ * Return false in all other cases
+ * oddOneOut(["silly", "mom", "let", "the"]) ➞ true
+ * oddOneOut(["swanky", "rhino", "moment"]) ➞ true
+ * oddOneOut(["the", "them", "theme"]) ➞ false
+ * oddOneOut(["very", "to", "an", "some"]) ➞ false
+ */
 public class OddOneOut extends Challenge {
 
     private boolean oddOneOut(String[] words) {

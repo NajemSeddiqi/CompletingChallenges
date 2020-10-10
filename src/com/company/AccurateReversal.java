@@ -13,7 +13,7 @@ public class AccurateReversal extends Challenge {
 
     private final StringBuilder sb = new StringBuilder();
 
-    String specialReverseString(String str) {
+    private String specialReverseString(String str) {
         var spaceIndexes = new ArrayList<Integer>();
         var upperCaseIndexes = new ArrayList<Integer>();
 

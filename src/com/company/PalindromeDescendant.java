@@ -1,6 +1,9 @@
 package com.company;
 
 
+import java.util.HashMap;
+import java.util.Vector;
+
 /**
  * A number may not be a palindrome, but its descendant can be.
  * A number's direct child is created by summing each pair of adjacent digits to create the digits of the next number
@@ -10,7 +13,7 @@ package com.company;
  */
 public class PalindromeDescendant extends Challenge {
 
-    boolean palindromeDescendant(int n) {
+    private boolean palindromeDescendant(int n) {
         if (String.valueOf(n).length() == 1) return true;
         return isPalindrome(n);
     }
@@ -96,7 +99,6 @@ public class PalindromeDescendant extends Challenge {
     private String getEndingChars(StringBuilder children) {
         return children.toString().substring(children.length() / 2, children.length());
     }
-
 
     @Override
     public void show() {

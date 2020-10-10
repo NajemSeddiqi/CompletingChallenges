@@ -1,6 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Optional;
 
 /**
@@ -18,6 +20,7 @@ public class ProductOfDigitOfSum extends Challenge {
 
         while (String.valueOf(product).length() > 1)
             product = multiplicativeReducer(Integer.parseInt(product));
+
 
         return Integer.parseInt(product);
     }
@@ -51,6 +54,7 @@ public class ProductOfDigitOfSum extends Challenge {
         Optional<String> oI = Arrays.stream(getIntArray(n))
                 .reduce((a, b) -> String.valueOf(Integer.parseInt(a) * Integer.parseInt(b)));
 
+
         return oI.orElseGet(() -> String.valueOf(true));
     }
 
@@ -66,10 +70,11 @@ public class ProductOfDigitOfSum extends Challenge {
 
     @Override
     public void show() {
-//        System.out.println(sumDigProd(111111111));
-//        System.out.println(sumDigProd(6));
+        System.out.println(sumDigProd(111111111));
+        System.out.println(sumDigProd(6));
+        System.out.println(sumDigProd(8, 16, 89, 3));
         System.out.println(sumDigProd(16, 28));
         System.out.println(sumDigProd(1, 2, 3, 4, 5, 6));
-//        System.out.println(sumDigProd(0));
+        System.out.println(sumDigProd(0));
     }
 }
