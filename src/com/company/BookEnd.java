@@ -65,6 +65,9 @@ public class BookEnd extends Challenge {
 
     @Override
     public void show() {
-        System.out.println(countUniqueBooks("&3&3&3&", '&'));
+//        System.out.println(countUniqueBooks("&3&3&3&", '&'));
+        System.out.println(countUniqueBooks("$AA$BBCATT$C$$B$", '$'));
+//        System.out.println(countUniqueBooks("A#BBCD##GGA##!#", '#'));
     }
+
 }

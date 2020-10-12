@@ -11,7 +11,7 @@ public class ValidateCreditCardNumber extends Challenge {
         String strNum = Long.valueOf(number).toString();
         if (strNum.length() < 14 || strNum.length() > 19) return false;
 
-        int checkDigit = Integer.parseInt(strNum.substring(strNum.length() - 1));
+        int checkDigit = (int) (number % 10);
         var n = new StringBuilder(strNum.substring(0, strNum.length() - 1)).reverse();
         String[] nArray = n.toString().split("");
 
@@ -52,6 +52,6 @@ public class ValidateCreditCardNumber extends Challenge {
     @Override
     public void show() {
         System.out.println(validateCard(1234567890123456L));
-        System.out.println(validateCard(79927398713L));
+//        System.out.println(validateCard(79927398713L));
     }
 }

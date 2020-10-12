@@ -2,81 +2,78 @@ package com.company;
 
 import org.junit.Test;
 
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private TruncatablePrimes t = new TruncatablePrimes();
+    private BookEnd b = new BookEnd();
 
     public ChallengeTests() {
     }
 
     @Test
     public void test1() {
-        assertEquals(TruncatablePrimes.Side.LEFT, t.truncatable(47));
+        assertEquals(4, b.countUniqueBooks("AZYWABBCATTTA", 'A'));
     }
 
     @Test
     public void test2() {
-        assertEquals(TruncatablePrimes.Side.LEFT, t.truncatable(347));
+        assertEquals(3, b.countUniqueBooks("$AA$BBCATT$C$$B$", '$'));
     }
 
     @Test
     public void test3() {
-        assertEquals(TruncatablePrimes.Side.LEFT, t.truncatable(62383));
+        assertEquals(0, b.countUniqueBooks("ZZABCDEF", 'Z'));
     }
 
     @Test
     public void test4() {
-        assertEquals(TruncatablePrimes.Side.RIGHT, t.truncatable(79));
+        assertEquals(6, b.countUniqueBooks("A#BBCD##GGA##!#", '#'));
     }
 
     @Test
     public void test5() {
-        assertEquals(TruncatablePrimes.Side.RIGHT, t.truncatable(7331));
+        assertEquals(1, b.countUniqueBooks("&AAAAAAAAAAAA&", '&'));
     }
 
     @Test
     public void test6() {
-        assertEquals(TruncatablePrimes.Side.RIGHT, t.truncatable(233993));
+        assertEquals(0, b.countUniqueBooks("&&&&&&&&", '&'));
     }
 
     @Test
     public void test7() {
-        assertEquals(TruncatablePrimes.Side.BOTH, t.truncatable(3797));
+        assertEquals(2, b.countUniqueBooks("&A&&&&&&C&", '&'));
     }
 
     @Test
     public void test8() {
-        assertEquals(TruncatablePrimes.Side.BOTH, t.truncatable(739397));
+        assertEquals(2, b.countUniqueBooks("&A&33333&C&", '&'));
     }
 
     @Test
     public void test9() {
-        System.out.println("Single-digit number treated as both.");
-        assertEquals(TruncatablePrimes.Side.BOTH, t.truncatable(5));
+        assertEquals(1, b.countUniqueBooks("&3&3&3&", '&'));
     }
 
     @Test
     public void test10() {
-        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(349));
+        assertEquals(2, b.countUniqueBooks("&4&3&3&", '&'));
     }
 
     @Test
     public void test11() {
-        System.out.println("The starting number is composite.");
-        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(2317));
+        assertEquals(0, b.countUniqueBooks("&AA&", 'A'));
     }
 
     @Test
     public void test12() {
-        System.out.println("1 is not a prime.");
-        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(131));
+        assertEquals(3, b.countUniqueBooks("AZAAABDZCCZZ", 'Z'));
     }
 
     @Test
     public void test13() {
-        System.out.println("Cannot contain a 0 digit.");
-        assertEquals(TruncatablePrimes.Side.NONE, t.truncatable(6043));
+        assertEquals(1, b.countUniqueBooks("AZAAABDZCCZZ", 'A'));
     }
 }
