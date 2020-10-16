@@ -7,56 +7,63 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private ShiftRightByAddition s = new ShiftRightByAddition();
-    private int[][] numVector = new int[][]{{80, 3}, {-24, 2}, {-5, 1}, {38, 0}, {192, 4}, {4666, 6}, {3777, 6}, {1024, 5}, {-512, 10}};
-    private int[] resVector = new int[]{10, -6, -3, 38, 12, 72, 59, 32, -1};
+    private SherlockValidation s = new SherlockValidation();
 
     public ChallengeTests() {
     }
 
-
     @Test
-    public void test01() {
-        assertEquals(s.shiftRight(numVector[0][0], numVector[0][1]), resVector[0]);
+    public void test1() {
+        assertThat(s.isValid("aabbccddeefghi"), is("NO"));
     }
 
     @Test
-    public void test02() {
-        assertEquals(s.shiftRight(numVector[1][0], numVector[1][1]), resVector[1]);
+    public void test2() {
+        assertThat(s.isValid("aabbcd"), is("NO"));
     }
 
     @Test
-    public void test03() {
-        assertEquals(s.shiftRight(numVector[2][0], numVector[2][1]), resVector[2]);
+    public void test3() {
+        assertThat(s.isValid("abcdefghhgfedecba"), is("YES"));
     }
 
     @Test
-    public void test04() {
-        assertEquals(s.shiftRight(numVector[3][0], numVector[3][1]), resVector[3]);
+    public void test4() {
+        assertThat(s.isValid("abc"), is("YES"));
     }
 
     @Test
-    public void test05() {
-        assertEquals(s.shiftRight(numVector[4][0], numVector[4][1]), resVector[4]);
+    public void test5() {
+        assertThat(s.isValid("abcc"), is("YES"));
     }
 
     @Test
-    public void test06() {
-        assertEquals(s.shiftRight(numVector[5][0], numVector[5][1]), resVector[5]);
+    public void test6() {
+        assertThat(s.isValid("abccc"), is("NO"));
     }
 
     @Test
-    public void test07() {
-        assertEquals(s.shiftRight(numVector[6][0], numVector[6][1]), resVector[6]);
+    public void test7() {
+        assertThat(s.isValid("aabccc"), is("NO"));
     }
 
     @Test
-    public void test08() {
-        assertEquals(s.shiftRight(numVector[7][0], numVector[7][1]), resVector[7]);
+    public void test8() {
+        assertThat(s.isValid("aabbccc"), is("YES"));
     }
 
     @Test
-    public void test09() {
-        assertEquals(s.shiftRight(numVector[8][0], numVector[8][1]), resVector[8]);
+    public void test9() {
+        assertThat(s.isValid("ibcttdxu"), is("YES"));
+    }
+
+    @Test
+    public void test10() {
+        assertThat(s.isValid("inuttdxux"), is("NO"));
+    }
+
+    @Test
+    public void test11() {
+        assertThat(s.isValid("mopnntrxelq"), is("YES"));
     }
 }
