@@ -63,9 +63,9 @@ public class AccurateReversal extends Challenge {
 
     @Override
     public void show() {
-        System.out.println(specialReverseString("1 23 456"));
-        System.out.println(specialReverseString("Edabit"));
-        System.out.println(specialReverseString("UPPER lower"));
+//        System.out.println(specialReverseString("1 23 456"));
+//        System.out.println(specialReverseString("Edabit"));
+//        System.out.println(specialReverseString("UPPER lower"));
         System.out.println(specialReverseString("Hello World!"));
     }
 }

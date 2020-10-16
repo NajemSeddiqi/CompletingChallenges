@@ -1,6 +1,5 @@
 package com.company;
 
-abstract class Challenge {
-
+public abstract class Challenge {
     abstract public void show();
 }

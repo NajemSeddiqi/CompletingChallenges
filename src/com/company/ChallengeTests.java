@@ -7,73 +7,56 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ChallengeTests {
-    private BookEnd b = new BookEnd();
+    private ShiftRightByAddition s = new ShiftRightByAddition();
+    private int[][] numVector = new int[][]{{80, 3}, {-24, 2}, {-5, 1}, {38, 0}, {192, 4}, {4666, 6}, {3777, 6}, {1024, 5}, {-512, 10}};
+    private int[] resVector = new int[]{10, -6, -3, 38, 12, 72, 59, 32, -1};
 
     public ChallengeTests() {
     }
 
+
     @Test
-    public void test1() {
-        assertEquals(4, b.countUniqueBooks("AZYWABBCATTTA", 'A'));
+    public void test01() {
+        assertEquals(s.shiftRight(numVector[0][0], numVector[0][1]), resVector[0]);
     }
 
     @Test
-    public void test2() {
-        assertEquals(3, b.countUniqueBooks("$AA$BBCATT$C$$B$", '$'));
+    public void test02() {
+        assertEquals(s.shiftRight(numVector[1][0], numVector[1][1]), resVector[1]);
     }
 
     @Test
-    public void test3() {
-        assertEquals(0, b.countUniqueBooks("ZZABCDEF", 'Z'));
+    public void test03() {
+        assertEquals(s.shiftRight(numVector[2][0], numVector[2][1]), resVector[2]);
     }
 
     @Test
-    public void test4() {
-        assertEquals(6, b.countUniqueBooks("A#BBCD##GGA##!#", '#'));
+    public void test04() {
+        assertEquals(s.shiftRight(numVector[3][0], numVector[3][1]), resVector[3]);
     }
 
     @Test
-    public void test5() {
-        assertEquals(1, b.countUniqueBooks("&AAAAAAAAAAAA&", '&'));
+    public void test05() {
+        assertEquals(s.shiftRight(numVector[4][0], numVector[4][1]), resVector[4]);
     }
 
     @Test
-    public void test6() {
-        assertEquals(0, b.countUniqueBooks("&&&&&&&&", '&'));
+    public void test06() {
+        assertEquals(s.shiftRight(numVector[5][0], numVector[5][1]), resVector[5]);
     }
 
     @Test
-    public void test7() {
-        assertEquals(2, b.countUniqueBooks("&A&&&&&&C&", '&'));
+    public void test07() {
+        assertEquals(s.shiftRight(numVector[6][0], numVector[6][1]), resVector[6]);
     }
 
     @Test
-    public void test8() {
-        assertEquals(2, b.countUniqueBooks("&A&33333&C&", '&'));
+    public void test08() {
+        assertEquals(s.shiftRight(numVector[7][0], numVector[7][1]), resVector[7]);
     }
 
     @Test
-    public void test9() {
-        assertEquals(1, b.countUniqueBooks("&3&3&3&", '&'));
-    }
-
-    @Test
-    public void test10() {
-        assertEquals(2, b.countUniqueBooks("&4&3&3&", '&'));
-    }
-
-    @Test
-    public void test11() {
-        assertEquals(0, b.countUniqueBooks("&AA&", 'A'));
-    }
-
-    @Test
-    public void test12() {
-        assertEquals(3, b.countUniqueBooks("AZAAABDZCCZZ", 'Z'));
-    }
-
-    @Test
-    public void test13() {
-        assertEquals(1, b.countUniqueBooks("AZAAABDZCCZZ", 'A'));
+    public void test09() {
+        assertEquals(s.shiftRight(numVector[8][0], numVector[8][1]), resVector[8]);
     }
 }
