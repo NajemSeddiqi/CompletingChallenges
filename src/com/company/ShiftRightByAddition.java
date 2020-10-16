@@ -9,10 +9,9 @@ public class ShiftRightByAddition extends Challenge {
     int shiftRight(int x, int y) {
         if (y == 0)
             return x;
-
-        while (y > 1) {
+        
+        if (y > 1)
             return shiftRight(x / 2, y - 1);
-        }
 
         return (int) Math.floor((x >> 1));
     }
